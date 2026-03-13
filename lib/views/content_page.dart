@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/controllers/data_controller.dart';
 import 'package:flutter_getx/routes/routes_name.dart';
 import 'package:flutter_getx/views/my_detail_page.dart';
 import 'package:get/get.dart';
 
-class ContentPage extends StatefulWidget {
+class ContentPage extends StatelessWidget {
   const ContentPage({Key? key}) : super(key: key);
+  
 
-  @override
-  _ContentPageState createState() => _ContentPageState();
-}
 
-class _ContentPageState extends State<ContentPage> {
   @override
   Widget build(BuildContext context) {
+    final DataController _controller = Get.put(DataController());
+    print('controller loading value is ${_controller.isLoading}');
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     int _currentIndex = 0;
